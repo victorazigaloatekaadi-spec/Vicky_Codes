@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vicky Codes - Game Developer</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body{
+            background: #0f172a;
+            color: #f1f5f9;
+            line-height: 1.6;
+            transition: background 0.32 color 0.3s;
+        }
+
+        body.light{
+            background: #f8fafc;
+            color: #0f172a;
+        }
+
+        header{
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            padding: 60px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        header h1{
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        header p{
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .toggle-btn{
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 8px 14px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .container{
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .section{
+            margin-bottom: 50px;
+        }
+
+        h2{
+            color: #a78bfa;
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+
+        body.light h2{
+            color: #6366f1;
+        }
+
+        .games{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .game-card{
+            background: #1e293b;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #334155;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        body.light .game-card{
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+        }
+
+        .game-card:hover{
+            transform: translateY(-5px);
+            background: #334155;
+            border-color: #8b5cf6;
+            box-shadow: 0 8px 20px rgba(139, 92, 246, 0.3);
+        }
+
+        body.light .game-card:hover{
+            background: #f1f5f9;
+            box-shadow: 0 8px 20px rgba(99, 102, 241, 0.2);
+        }
+
+        .game-card h3{
+            color: #f8fafc;
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+        }
+
+        body.light .game-card h3{
+            color: #0f172a;
+        }
+
+        .game-card p{
+            color: #cbd5e1;
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+            flex-grow: 1;
+        }
+
+        body.light .game-card p{
+            color: #475569;
+        }
+
+        .game-tag{
+            display: inline-block;
+            background: #8b5cf6;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            width: fit-content;
+        }
+
+        .btn{
+            background: #8b5cf6;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            text-decoration: none;
+            text-align: center;
+            transition: background 0.2s;
+            display: inline-block;
+        }
+
+        .btn:hover{
+            background: #7c3aed;
+        }
+
+        .btn-secondary{
+            background: #475569;
+            margin-top: 10px;
+        }
+
+        footer{
+            text-align: center;
+            padding: 30px 20px;
+            border-top: 1px solid #334155;
+            color: #94a3b8;
+        }
+
+        /* MOBILE RESPONSIVE */
+        @media (max-width: 768px) {
+            header { padding: 40px 15px; }
+            header h1 { font-size: 1.8rem; }
+            header p { font-size: 1rem; }
+            .container { margin: 30px auto; padding: 0 15px; }
+            h2 { font-size: 1.5rem; }
+            .games { grid-template-columns: 1fr; gap: 15px; }
+            .game-card { padding: 15px; }
+            .game-card:hover { transform: none; }
+            .toggle-btn { top: 10px; right: 10px; }
+        }
+
+        .profile-pic{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #8b5cf6;
+            margin-bottom: 15px;
+        }
+
+        body.light .profile-pic{
+            border-color: #6366f1;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <button class="toggle-btn" onclick="toggleTheme()">&#x1F319;Dark</button>
+
+        <img src="images/profile.jpg" alt="Vicky Codes" class="profile-pic">
+
+        <h1>Vicky Codes</h1>
+        <p>Game Developer & Programmer | SS3 Student</p>
+    </header>
+
+    <div class="container">
+        <section class="section">
+            <h2>About Me</h2>
+            <p>I'm Victor, a student programmer making games while learning to code.
+                 I build 2D and 3D games, experiment with mods, and share my projects here.
+                 Follow my journey as I level up my skills!
+            </p>
+        </section>
+
+        <section class="section">
+            <h2>My Games</h2>
+            <div class="games">
+
+                <!-- GAME 1 -->
+                 <div class="game-card">
+                    <h3>Car Race 3D</h3>
+                    <p>A simple 3D racer for PC. Try not to collide with cars at top speed and get the Highest score.</p>
+                    <span class="game-tag">Python</span>
+                    <a href="games/Carrace(VC).rar" class="btn" download>Download</a> <!-- phone.apk -->
+                 </div>
+
+                 <!-- GAME 2 -->
+                 <div class="game-card">
+                    <h3>My First Game</h3>
+                    <p>A simple 2D platformer I built in SS3 using Pygame. Jump, collect coins, avoid spikes!</p>
+                    <span class="game-tag">Python</span>
+                    <a href="games/firstgame.zip" class="btn" download>Download</a>
+                 </div>
+
+                 <!-- GAME 3 -->
+                 <div class="game-card">
+                    <h3>My First Game</h3>
+                    <p>A simple 2D platformer I built in SS3 using Pygame. Jump, collect coins, avoid spikes!</p>
+                    <span class="game-tag">Python</span>
+                    <a href="games/firstgame.zip" class="btn" download>Download</a>
+                 </div>
+
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Contact</h2>
+            <p>Want to collaborate or give feedback? Reach out!</p>
+            <button class="btn btn-secondary" onclick="document.getElementById('email').style.display='block'">
+                Show Email
+            </button>
+            <p id="email" style="margin-top: 10px; display: none; color: #a78bfa;">
+                victorazigaloatekaadi@gmail.com
+            </p>
+        </section>
+
+    </div>
+    <footer>
+        <p>Copyright &#169; 2026 Vicky Codes. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Dark/Light mode toggle
+        function toggleTheme() {
+            document.body.classList.toggle('light');
+            const btn = document.querySelector('.toggle-btn');
+            if (document.body.classList.contains('light')) {
+                btn.innerHTML = '&#x2600; Light';
+                localStorage.setItem('theme', 'light');
+            } else {
+                btn.innerHTML = '&#x1F319; Dark';
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        // Load saved theme
+        if (localStorage.getItem('theme') === 'light') {
+            document.body.classList.add('light');
+            document.querySelector('.toggle-btn').innerHTML = '&#x2600; Light';
+        }
+    </script>
+</body>
+</html>
